@@ -9,7 +9,7 @@ trigger:
 variables:
    terraformVersion: 0.14.4
    timeoutInMinutes: 60
-   agentPool: 'ubuntu-18.04'
+   agentPool: 'ubuntu-latest'
    service_connection: 'DTS-CFTPTL-INTSVC'
    storage_account_rg: 'core-infra-intsvc-rg'
    storage_account_name: 'cftptlintsvc'
@@ -29,7 +29,7 @@ stages:
 
          steps:
 
-          - task: TerraformInstaller@0
+          - task: TerraformInstaller@2
             displayName: Terraform install
             inputs:
               terraformVersion: ${{ variables.terraformVersion }}
